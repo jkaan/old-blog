@@ -5,7 +5,6 @@ author = "Joey"
 copyright = "Joey"
 googleanalytics = "UA-48594289-4"
 theme = "hugo-zen"
-publishDir = "docs"
 
 [params]
   logo = "profile.jpeg"
