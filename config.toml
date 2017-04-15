@@ -7,6 +7,6 @@ googleanalytics = "UA-48594289-4"
 theme = "hugo-zen"
 
 [params]
-  logo = "profile.jpeg"
+  logo = "/profile.jpeg"
   github = "https://github.com/jkaan"
   email = "info@joeykaan.nl"
