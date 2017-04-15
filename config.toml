@@ -1,0 +1,13 @@
+baseURL = "https://joeykaan.nl"
+languageCode = "en-us"
+title = "Joey's Blog"
+author = "Joey"
+copyright = "Joey"
+googleanalytics = "UA-48594289-4"
+theme = "hugo-zen"
+publishDir = "docs"
+
+[params]
+  logo = "profile.jpeg"
+  github = "https://github.com/jkaan"
+  email = "info@joeykaan.nl"
