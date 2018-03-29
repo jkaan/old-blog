@@ -6,6 +6,7 @@ copyright = "Joey"
 googleanalytics = "UA-48594289-4"
 theme = "hugo-zen"
 disqusShortname = "joeykaan"
+publishDir = "../jkaan.github.io"
 
 [params]
   logo = "/profile.jpeg"
