@@ -1,6 +1,6 @@
 baseURL = "https://joeykaan.nl"
 languageCode = "en-us"
-title = "Joey"
+title = "Joey Kaan"
 author = "Joey"
 copyright = "Joey"
 googleanalytics = "UA-48594289-4"
@@ -13,16 +13,12 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-    author = "Joey"
-    info = "Software Developer, specializing in Android Apps."
     keywords = "blog,developer,personal"
     avatarurl = "/profile.jpeg"
     hidecredits = true
     hidecopyright = true
-    rtl = false
     math = true
 
-# Social links
 [[params.social]]
     name = "Github"
     icon = "fab fa-github fa-2x"
@@ -31,20 +27,10 @@ pygmentscodefencesguesssyntax = true
 [[params.social]]
     name = "Twitter"
     icon = "fab fa-twitter fa-2x"
-    weight = 3
+    weight = 1
     url = "https://twitter.com/joeykaan/"
 [[params.social]]
     name = "Medium"
     icon = "fab fa-medium fa-2x"
-    weight = 3
-    url = "https://medium.com/@joeykaan"
-
-# Menu links
-[[menu.main]]
-    name = "Blog"
     weight = 1
-    url  = "/posts/"
-[[menu.main]]
-    name = "About"
-    weight = 2
-    url = "/about/"
+    url = "https://medium.com/@joeykaan"
