@@ -1,7 +1,7 @@
 ---
 title: "Unit Testing delegates"
 date: 2017-06-08 20:12:00
-tags: swift testing delegate
+tags: [swift, testing, delegate]
 ---
 
 In an app that I'm currently developing I'm using delegates to communicate to other objects.

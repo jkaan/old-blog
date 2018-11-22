@@ -1,7 +1,7 @@
 ---
 title: "Doctrine Merge"
 date: 2014-08-19 20:56:00
-tags: doctrine orm php
+tags: [doctrine, orm, php]
 ---
 
 This will be a very short post about the merge method that exists on the entity manager of Doctrine.

@@ -1,13 +1,50 @@
 baseURL = "https://joeykaan.nl"
 languageCode = "en-us"
-title = "Joey's Blog"
+title = "Joey"
 author = "Joey"
 copyright = "Joey"
 googleanalytics = "UA-48594289-4"
-theme = "hugo-zen"
+theme = "hugo-coder"
 disqusShortname = "joeykaan"
+paginate = 20
+canonifyurls = true
+pygmentsstyle = "bw"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 
 [params]
-  logo = "/profile.jpeg"
-  github = "https://github.com/jkaan"
-  email = "info@joeykaan.nl"
+    author = "Joey"
+    info = "Software Developer, specializing in Android Apps."
+    keywords = "blog,developer,personal"
+    avatarurl = "/profile.jpeg"
+    hidecredits = true
+    hidecopyright = true
+    rtl = false
+    math = true
+
+# Social links
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    weight = 1
+    url = "https://github.com/jkaan/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    weight = 3
+    url = "https://twitter.com/joeykaan/"
+[[params.social]]
+    name = "Medium"
+    icon = "fab fa-medium fa-2x"
+    weight = 3
+    url = "https://medium.com/@joeykaan"
+
+# Menu links
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "About"
+    weight = 2
+    url = "/about/"

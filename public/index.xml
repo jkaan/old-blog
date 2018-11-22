@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Joey</title>
+    <link>https://joeykaan.nl/</link>
+    <description>Recent content on Joey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Joey</copyright>
+    <lastBuildDate>Thu, 08 Jun 2017 20:12:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://joeykaan.nl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unit Testing delegates</title>
+      <link>https://joeykaan.nl/test-delegates/</link>
+      <pubDate>Thu, 08 Jun 2017 20:12:00 +0000</pubDate>
+      
+      <guid>https://joeykaan.nl/test-delegates/</guid>
+      <description>In an app that I&amp;rsquo;m currently developing I&amp;rsquo;m using delegates to communicate to other objects. Most of the time a delegate is used if there&amp;rsquo;s some sort of asynchronous operation going on. Seeing as I like to pretend I&amp;rsquo;m doing TDD, it&amp;rsquo;s quite important to have a way of testing whether or not a particular delegate is called and with the correct value.
+This is a very simplified illustration of the code that I wanted to test.</description>
+    </item>
+    
+    <item>
+      <title>Swift Convert function</title>
+      <link>https://joeykaan.nl/swift-convert-func/</link>
+      <pubDate>Sun, 21 May 2017 13:41:00 +0000</pubDate>
+      
+      <guid>https://joeykaan.nl/swift-convert-func/</guid>
+      <description>While working on an iOS app I ran into the problem that I needed to calculate the position of a view on the screen in relation to another element which was not the parent element. If this element would&amp;rsquo;ve been the parent element a simple way to get that position would be to just get the frame of the view: let viewFrame = view.frame. The frame is the position of the element in relation to the parent element.</description>
+    </item>
+    
+    <item>
+      <title>Doctrine Merge</title>
+      <link>https://joeykaan.nl/doctrine-merge/</link>
+      <pubDate>Tue, 19 Aug 2014 20:56:00 +0000</pubDate>
+      
+      <guid>https://joeykaan.nl/doctrine-merge/</guid>
+      <description>This will be a very short post about the merge method that exists on the entity manager of Doctrine. I have encountered this issue when working on a project at work.
+It&amp;rsquo;s very easy to forget about the internals of Doctrine since it&amp;rsquo;s such an easy ORM to work with.
+When you set the user on the token to pass to the security context that token will be saved in the session.</description>
+    </item>
+    
+    <item>
+      <title>First Blog Post</title>
+      <link>https://joeykaan.nl/first-post/</link>
+      <pubDate>Thu, 22 May 2014 14:56:00 +0000</pubDate>
+      
+      <guid>https://joeykaan.nl/first-post/</guid>
+      <description>This post is the first public post on my own blog site.
+I set up this site using Jekyll and GitHub Pages. I always wanted to blog about my experience and my life, when I found out about Jekyll I wanted to try it out.
+I really liked it and it&amp;rsquo;s a really efficient way of blogging, you can have a blog up in a blink of an eye.
+More information about me can be found on the About Me page, however I will give a short introduction here as well.</description>
+    </item>
+    
+  </channel>
+</rss>

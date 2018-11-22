@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Joey">
+    
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://joeykaan.nl">
+    <title>
+  Doctrine Merge · Joey
+</title>
+
+    <link rel="canonical" href="https://joeykaan.nl/doctrine-merge/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://joeykaan.nl/css/coder.min.48a91b6544fdc006092d34b2150b4e0379d72cefe62ae914c2b38d742820ad3d.css" integrity="sha256-SKkbZUT9wAYJLTSyFQtOA3nXLO/mKukUwrONdCggrT0=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://joeykaan.nl/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://joeykaan.nl/img/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.51" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://joeykaan.nl">
+      Joey
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joeykaan.nl/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joeykaan.nl/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Doctrine Merge</h1>
+    </header>
+
+    <p>This will be a very short post about the merge method that exists on the entity manager of Doctrine.
+I have encountered this issue when working on a project at work.</p>
+
+<p>It&rsquo;s very easy to forget about the internals of Doctrine since it&rsquo;s such an easy ORM to work with.</p>
+
+<p>When you set the user on the token to pass to the security context that token will be saved in the session. When you retrieve the security context and hereby the user the entity isn&rsquo;t known to Doctrine to be managed. You would however think it was. The reason for this is because the object retrieved is stored in the session and therefore doesn&rsquo;t act like a normal Doctrine entity. To overcome this issue you use the merge method of Doctrine&rsquo;s entity manager.</p>
+
+<p>The merge method takes one parameter, the object to merge with an object from the database. The merge method compares the entities inside the database, will merge them if the correct one is found and then return the entity. This returned entity is now managed by Doctrine which allows you to continue as you would otherwise.</p>
+
+<p>So remember, if you are ever working with some application which would save an entity to a session. Be sure to, after retrieving this entity from the session, always call the merge method by passing the entity as a parameter.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2018
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-48594289-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>

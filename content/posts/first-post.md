@@ -1,7 +1,7 @@
 ---
 title: "First Blog Post"
 date: 2014-05-22 14:56:00
-tags: welcome general
+tags: [welcome, general]
 ---
 
 This post is the first public post on my own blog site.

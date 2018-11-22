@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Joey">
+    
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://joeykaan.nl">
+    <title>
+  Swift Convert function · Joey
+</title>
+
+    <link rel="canonical" href="https://joeykaan.nl/swift-convert-func/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://joeykaan.nl/css/coder.min.48a91b6544fdc006092d34b2150b4e0379d72cefe62ae914c2b38d742820ad3d.css" integrity="sha256-SKkbZUT9wAYJLTSyFQtOA3nXLO/mKukUwrONdCggrT0=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://joeykaan.nl/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://joeykaan.nl/img/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.51" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://joeykaan.nl">
+      Joey
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joeykaan.nl/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joeykaan.nl/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Swift Convert function</h1>
+    </header>
+
+    <p>While working on an iOS app I ran into the problem that I needed to calculate the position of a view on the screen in relation to another element which was not the parent element. If this element would&rsquo;ve been the parent element a simple way to get that position would be to just get the frame of the view: <code>let viewFrame = view.frame</code>. The frame is the position of the element in relation to the parent element.</p>
+
+<p>Sometimes though you want to get the position of the element in relation to a view that is four or five parents above the one that the view is in. Why, you might ask? A good example is to see whether or not a view is visible for the user or not.</p>
+
+<p>The <code>convert</code> function looks like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">func</span> convert(<span style="font-weight:bold">_</span> rect: CGRect, to view: UIView?) -&gt; CGRect?</code></pre></div>
+<p>This function will convert a CGRect that is within the bounds of the view that the function is called upon to another view which can be given as a second parameter. If this parameter is not given it will be calculated according to the window.</p>
+
+<p>Let&rsquo;s see some code which illustrates the usefulness of this method:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="font-weight:bold">class</span> <span style="font-weight:bold">ProductPageViewController</span>: UIScrollViewDelegate {
+  <span style="font-weight:bold">@IBOutlet</span> <span style="font-weight:bold">private</span> <span style="font-weight:bold">weak</span> <span style="font-weight:bold">var</span> scrollView: UIScrollView!
+  <span style="font-weight:bold">@IBOutlet</span> <span style="font-weight:bold">private</span> <span style="font-weight:bold">weak</span> <span style="font-weight:bold">var</span> productNameView: ProductNameView!
+
+  <span style="font-weight:bold">func</span> scrollViewDidScroll(<span style="font-weight:bold">_</span> scrollView: UIScrollView) {
+    <span style="font-weight:bold">let</span> rect = productNameView.convert(productNameView.frame, to: scrollView)
+
+    <span style="font-weight:bold">if</span> (rect.origin.y &lt; 0) {
+      <span style="font-style:italic">// At this moment the view begins to scroll out of the view.</span>
+    }
+  }
+}</code></pre></div>
+<p>At the moment that a particular view begins to scroll out of the view it&rsquo;s possible to show another view based on how far the view has been scrolled out of the way.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2018
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-48594289-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>

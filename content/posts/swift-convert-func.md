@@ -1,7 +1,7 @@
 ---
 title: "Swift Convert function"
 date: 2017-05-21 13:41:00
-tags: swift uikit
+tags: [swift, uikit]
 ---
 
 While working on an iOS app I ran into the problem that I needed to calculate the position of a view on the screen in relation to another element which was not the parent element. If this element would've been the parent element a simple way to get that position would be to just get the frame of the view: `let viewFrame = view.frame`. The frame is the position of the element in relation to the parent element.
