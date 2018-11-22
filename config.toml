@@ -11,6 +11,7 @@ canonifyurls = true
 pygmentsstyle = "bw"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
     keywords = "blog,developer,personal"
